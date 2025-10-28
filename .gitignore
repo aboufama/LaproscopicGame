@@ -1,6 +1,10 @@
-.import/
-.mono/
-.export/
-*.translation
-*.tmp
-export_presets.cfg
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv
+venv/
+.env.local
+.DS_Store
+telemetry/
