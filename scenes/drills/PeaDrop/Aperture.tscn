@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scenes/drills/PeaDrop/Aperture.gd" id="1"]
+
+[sub_resource type="CircleShape2D" id="1"]
+radius = 32.0
+
+[node name="Aperture" type="Area2D"]
+script = ExtResource("1")
+monitoring = true
+monitorable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("1")
+
+[node name="Ring" type="Sprite2D" parent="."]
+self_modulate = Color(0.8, 0.9, 1.0, 0.8)
+scale = Vector2(1.2, 1.2)
+
