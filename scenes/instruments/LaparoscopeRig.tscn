@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scenes/instruments/LaparoscopeRig.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/instruments/Instrument.tscn" id="2"]
+
+[node name="LaparoscopeRig" type="Node2D"]
+script = ExtResource("1")
+
+[node name="PortLeft" type="Node2D" parent="."]
+position = Vector2(-160, -100)
+
+[node name="InstrumentLeft" parent="PortLeft" instance=ExtResource("2")]
+
+[node name="PortRight" type="Node2D" parent="."]
+position = Vector2(160, -100)
+
+[node name="InstrumentRight" parent="PortRight" instance=ExtResource("2")]
+[editable path="PortLeft/InstrumentLeft"]
+[editable path="PortRight/InstrumentRight"]

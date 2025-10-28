@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/instruments/Instrument.gd" id="1"]
+
+[sub_resource type="CircleShape2D" id="1"]
+radius = 8.0
+
+[node name="Instrument" type="Node2D"]
+script = ExtResource("1")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+self_modulate = Color(0.839216, 0.882353, 0.937255, 1)
+
+[node name="Tip" type="Area2D" parent="."]
+position = Vector2(0, 64)
+monitoring = true
+monitorable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tip"]
+shape = SubResource("1")
