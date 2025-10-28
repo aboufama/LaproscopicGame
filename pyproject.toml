@@ -1,0 +1,17 @@
+[project]
+name = "lapdrop-stealth-surgeon"
+version = "0.1.0"
+description = "LapDrop: Stealth Surgeon — a laparoscopic training-inspired arcade simulation built with Pygame."
+authors = [
+  { name = "LapDrop Team" }
+]
+requires-python = ">=3.11"
+dependencies = [
+  "pygame>=2.5",
+]
+
+[project.scripts]
+lapdrop = "lapdrop.__init__:main"
+
+[tool.ruff]
+line-length = 100

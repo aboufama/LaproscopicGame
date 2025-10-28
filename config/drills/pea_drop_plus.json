@@ -1,0 +1,43 @@
+{
+  "id": "pea_drop_plus",
+  "name": "Pea Drop Plus",
+  "duration_seconds": 60,
+  "target_drops": 12,
+  "spawn_interval": {
+    "start": 2.0,
+    "end": 1.0
+  },
+  "apertures": [
+    {
+      "id": "fixed_center",
+      "type": "static",
+      "position": [0.0, -100.0],
+      "radius": 24
+    },
+    {
+      "id": "orbital",
+      "type": "orbit",
+      "center": [60.0, 40.0],
+      "radius": 20,
+      "path_radius": 48,
+      "angular_speed": 0.5
+    }
+  ],
+  "tissue_zones": [
+    {
+      "id": "posterior_wall",
+      "shape": "rectangle",
+      "center": [0.0, 120.0],
+      "size": [200.0, 30.0],
+      "penalty": 5
+    }
+  ],
+  "penalties": {
+    "tissue_contact": 5,
+    "missed_drop": 8
+  },
+  "bonuses": {
+    "perfect_drop": 15,
+    "moving_target_multiplier": 1.25
+  }
+}
