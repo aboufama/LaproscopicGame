@@ -1,58 +1,25 @@
 # LapDrop: Stealth Surgeon
 
-LapDrop is a Godot 4 project that prototypes the Pea Drop+ laparoscopic timing drill. It scaffolds the full training flow with reusable systems for drills, scoring, and telemetry so new exercises can be added quickly.
+LapDrop: Stealth Surgeon is being rebuilt as a Python arcade-simulation experience inspired by laparoscopic training drills.
+This repository now hosts the design documentation and Python-oriented project layout that will guide future implementation.
 
-## Getting Started
+## Project Contents
 
-1. [Install Godot 4.2](https://godotengine.org/download). The project targets the OpenGL renderer for broad compatibility.
-2. Clone this repository and open `project.godot` from the Godot project manager.
-3. Press <kbd>F5</kbd> to launch the game. Use a gamepad or the keyboard mappings listed below.
+- `docs/` – High-level design documentation for the Codex-assisted Python implementation.
+- `src/` – Placeholder package structure where the Python gameplay systems will be implemented.
+- `config/` – Example drill configuration directory.
 
-## Controls
+## Next Steps
 
-| Action | Gamepad | Keyboard |
-| --- | --- | --- |
-| Move left instrument | Left stick | W/A/S/D |
-| Move right instrument | Right stick | I/J/K/L |
-| Grip left instrument | LT | F |
-| Grip right instrument | RT | J |
-| Swap instruments | A | Tab |
-| Zoom camera in/out | Right trigger axis | Q / E or Mouse Wheel |
-| Pause | Start | Esc |
+1. Use the design brief in `docs/LapDrop_Stealth_Surgeon_Design.md` to generate Python code (e.g., with Codex or manual development).
+2. Implement the gameplay systems within the `src/lapdrop/` package following the modular architecture described in the document.
+3. Add drill configuration files under `config/` to describe session parameters.
+4. Record telemetry output to a `telemetry/` folder once runtime systems exist.
 
-## Repository Structure
+## Requirements
 
-```
-res://
-├── autoload/             # GameState, telemetry, SFX, and runtime config singletons
-├── scenes/
-│   ├── core/             # Main scene and HUD
-│   ├── drills/PeaDrop/   # Pea Drop+ drill scenes and scripts
-│   ├── instruments/      # Instrument rigs and controllers
-│   └── anatomy/          # Tissue collision proxies
-├── scripts/              # Shared resources and scoring helpers
-├── data/drills/          # DrillConfig resources
-├── ui/Menus/             # Title and drill select screens
-└── audio/, art/, etc.    # Placeholders for future assets
-```
+The future Python project is expected to rely on lightweight 2D frameworks such as **Pygame**, **Pyglet**, or **Arcade**. Declare concrete dependencies in `pyproject.toml` or `requirements.txt` as the implementation progresses.
 
-## Current Features
+## License
 
-- **Pea Drop+ Drill:** Feeder-driven bead spawns, moving apertures, and tissue collision penalties.
-- **Laparoscope Rig:** Dual-instrument controller with fulcrum inversion and tremor settings.
-- **Scoring & Telemetry:** Streak multiplier, economy estimate, and NDJSON session logs written to `user://`.
-- **Reusable HUD:** Timer, drop counter, streak meter, and results overlay with retry routing.
-
-## Adding New Drills
-
-1. Create a new `DrillConfig` resource in `data/drills/` for spawn cadence, apertures, and penalties.
-2. Duplicate `scenes/drills/PeaDrop/PeaDrop.tscn` as a starting point and swap in drill-specific controllers.
-3. Register the drill in `ui/Menus/DrillSelect.gd` to expose it in the menu.
-
-## Telemetry Files
-
-Session logs are exported to the Godot `user://` directory (platform-specific). Each session creates a `<drill>_<timestamp>.ndjson` file that contains per-event records suitable for analytics pipelines.
-
----
-
-The project is intentionally light on final art and audio so designers can iterate on feel and telemetry before polishing the presentation.
+Add an explicit license once the project code is implemented.
